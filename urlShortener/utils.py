@@ -9,7 +9,7 @@ SIZE = getattr(settings, "MAXIMUM_URL_CHARS", 7)
 
 AVAIABLE_CHARS = ascii_letters + digits
 
-
+# random code of min length 7 
 def create_random_code(chars=AVAIABLE_CHARS):
     """
     Creates a random string with the predetermined size
@@ -18,6 +18,7 @@ def create_random_code(chars=AVAIABLE_CHARS):
         [choice(chars) for _ in range(SIZE)]
     )
 
+# short code  
 def create_shortened_url(model_instance):
     random_code = create_random_code()
     # Gets the model class
