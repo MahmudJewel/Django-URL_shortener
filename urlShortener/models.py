@@ -1,16 +1,19 @@
 from django.db import models
 from .utils import create_shortened_url
+from datetime import datetime, timedelta
 
 # Create your models here.
 
 # short model 
 class ShortURLS(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
+    expiration_day = models.IntegerField(default=1)
     long_url = models.URLField()
     short_url = models.CharField(max_length=15, unique=True, blank=True)
+    is_deleted = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.long_url} to {self.short_url}'
+        return f'{self.long_url} ==> {self.short_url}'
 
     def save(self, *args, **kwargs):
         # If the short url wasn't specified
