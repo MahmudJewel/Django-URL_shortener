@@ -12,6 +12,7 @@ class ShortURLS(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=2)
     created_at = models.DateTimeField(auto_now_add=True)
     expiration_day = models.IntegerField(default=1)
+    # expired_at = created_at + timedelta(days=expiration_day)
     long_url = models.URLField()
     short_url = models.CharField(max_length=15, unique=True, blank=True)
     is_deleted = models.BooleanField(default=False)
