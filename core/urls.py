@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('subscriber.urls')),
     path('', include('urlShortener.urls')),
+    path('api/', include('api.urls')),
 ]
