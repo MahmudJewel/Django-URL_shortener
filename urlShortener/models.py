@@ -1,11 +1,15 @@
 from django.db import models
 from .utils import create_shortened_url
 from datetime import datetime, timedelta
+from django.contrib.auth.models import User
 
 # Create your models here.
 
 # short model 
 class ShortURLS(models.Model):
+    # guest = User.objects.get(id=2)
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=2)
     created_at = models.DateTimeField(auto_now_add=True)
     expiration_day = models.IntegerField(default=1)
     long_url = models.URLField()

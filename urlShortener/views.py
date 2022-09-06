@@ -3,6 +3,7 @@ from .models import ShortURLS
 from .forms import ShortenerForm
 from django.http import HttpResponseRedirect
 from django.http import HttpResponseNotFound
+from django.contrib.auth.models import User
 
 def homePage(request):
     template = 'home.html'
@@ -15,7 +16,10 @@ def homePage(request):
     elif request.method == 'POST':
         used_form = ShortenerForm(request.POST)
         if used_form.is_valid():
-            shortened_object = used_form.save()
+            shortened_object = used_form.save(commit=False)
+            if request.user.is_authenticated:
+                shortened_object.user = request.user 
+            shortened_object.save()
             new_url = request.build_absolute_uri('/') + shortened_object.short_url
             long_url = shortened_object.long_url
             context['new_url']  = new_url
