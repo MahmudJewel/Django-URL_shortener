@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from .models import ShortURLS
 from .forms import ShortenerForm
-from django.http import HttpResponseRedirect
-from django.http import HttpResponseNotFound
+from django.http import HttpResponseRedirect, HttpResponseNotFound, HttpResponse
+# from django.http import HttpResponseNotFound
 from django.contrib.auth.models import User
 
 def homePage(request):
@@ -31,9 +31,9 @@ def homePage(request):
 
 def redirect_url_view(request, shortened_part):
     try:
-        shortener = ShortURLS.objects.get(short_url=shortened_part)
+        shortener = ShortURLS.objects.filter(is_deleted=False).get(short_url=shortened_part)
         # shortener.times_followed += 1        
         # shortener.save()
         return HttpResponseRedirect(shortener.long_url) 
     except:
-        raise HttpResponseNotFound('Sorry this link is broken :(')
+        return HttpResponse('Sorry this link is broken :(')
