@@ -16,11 +16,5 @@ class CreateUrls(generics.CreateAPIView):
 class AllUrls(generics.ListAPIView):
     queryset = ShortURLS.objects.all()
     serializer_class = ShortUrlSerializer
-    # permission_classes = (IsAdminUser,)
-    # paginate_by = 2
-    # paginator = 2
-
-    # def get(self, request):
-    #     all_urls = ShortURLS.objects.all()
-    #     serializer = ShortUrlSerializer(all_urls, many=True)
-    #     return Response(serializer.data) #all type
+    paginate_by = 10
+    
