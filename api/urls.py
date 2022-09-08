@@ -9,5 +9,5 @@ urlpatterns = [
 
     # create short link 
     path('create/', CreateUrls.as_view(), name='create'),
-    path('list/', AllUrls.as_view(), name='all'),
+    path('list/', AllUrls.as_view(), name='list'),
 ]

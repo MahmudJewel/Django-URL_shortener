@@ -21,4 +21,7 @@ urlpatterns = [
     path('user/', include('subscriber.urls')),
     path('', include('urlShortener.urls')),
     path('api/', include('api.urls')),
+
+    #jwt
+	path('', include('djoser.urls.jwt')),
 ]

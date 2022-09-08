@@ -3,6 +3,11 @@ from rest_framework.views import APIView
 from rest_framework import generics
 from rest_framework import status
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly, AllowAny
+# from rest_framework_jwt.authentication import JSONWebTokenAuthentication
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+
 from .serializers import ShortUrlSerializer
 from urlShortener.models import ShortURLS
 # Create your views here.
@@ -12,9 +17,23 @@ from urlShortener.models import ShortURLS
 class CreateUrls(generics.CreateAPIView):
     serializer_class = ShortUrlSerializer
     queryset = ShortURLS.objects.all()
+    # permission_classes = [IsAuthenticated, ]
+    authentication_classes = [JWTAuthentication, BasicAuthentication,]
+
+    # def post(self, request, *args, **kwargs):
+    #     user = request.user
+    #     print('User is =>', user.username)
+    #     return self.create(request, *args, **kwargs)
+
+    # def post(self, request, *args, **kwargs):
+    #     user = request.user
+    #     serializer = ShortUrlSerializer()
+    #     serializer.save()
+    #     return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class AllUrls(generics.ListAPIView):
     queryset = ShortURLS.objects.all()
     serializer_class = ShortUrlSerializer
     paginate_by = 10
+    permission_classes = [IsAdminUser, ]
     
