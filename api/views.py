@@ -17,7 +17,7 @@ from urlShortener.models import ShortURLS
 class CreateUrls(generics.CreateAPIView):
     serializer_class = ShortUrlSerializer
     queryset = ShortURLS.objects.all()
-    # permission_classes = [ AllowAny, ]
+    permission_classes = [ AllowAny, ]
     authentication_classes = [JWTAuthentication,]
 
 class AllUrls(generics.ListAPIView):

@@ -9,8 +9,8 @@ from django.contrib.auth.models import User
 class ShortURLS(models.Model):
     # guest = User.objects.get(id=2)
 
-    # user = models.ForeignKey(User, on_delete=models.CASCADE, default=2)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=2)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     expiration_day = models.IntegerField(default=1)
     # expired_at = created_at + timedelta(days=expiration_day)
