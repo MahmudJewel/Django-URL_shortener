@@ -25,7 +25,7 @@ class Command(BaseCommand):
             now = pytz.utc.localize(now)
             if expire_time<=now:
                 url.is_deleted=True
-                # url.save()
+                url.save()
                 print(now,' ==> ', expire_time, 'id= ', url.id)
 
         self.stdout.write(self.style.SUCCESS('Successfully closed expired url '))
