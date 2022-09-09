@@ -9,8 +9,6 @@ from django.conf import settings
 
 # short model 
 class ShortURLS(models.Model):
-    # guest = User.objects.get(id=2)
-
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=2)
     created_at = models.DateTimeField(auto_now_add=True)
     expiration_day = models.IntegerField(default=1)

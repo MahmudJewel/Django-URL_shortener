@@ -4,30 +4,30 @@
 <div class="container">
     <div class="card mt-5">
         <div class="card-header text-center py-3">
-            <h1>URL Shortner Application <i class="fas fa-link px-2"></i></h1>
+            <h1>URL Shortener Application <i class="fas fa-link px-2"></i></h1>
         </div>
         <div class="px-3 py-4">
             <form action="" method="POST">
                 {% csrf_token %}
                 <div class="row">
-                    <label class="col-4">Original URL: </label>
-                    <div class="col-8">{{form.long_url}}</div>
+                    <label class="col-md-2 col-form-label">Original URL*: </label>
+                    <div class="col-md-10">{{form.long_url}}</div>
                 </div>
                 {% if user.is_authenticated %}
                 <br>
                 <div class="row">
-                    <label class="col-4">Custom URL: </label>
-                    <div class="col-8">{{form.short_url}}</div>
+                    <label class="col-md-2 col-form-label">Custom URL: </label>
+                    <div class="col-md-10">{{form.short_url}}</div>
                 </div>
                 <br>
                 <div class="row">
-                    <label class="col-4">Expiration day: </label>
-                    <div class="col-8">{{form.expiration_day}}</div>
+                    <label class="col-md-2 col-form-label">Expiration day: </label>
+                    <div class="col-md-10">{{form.expiration_day}}</div>
                 </div>
                 {% endif %}
                 <br>
-                <div class="row text-center">
-                    <div class="col-2">
+                <div class="row justify-content-center">
+                    <div class="col-xl-2">
                         <button class="btn btn-success btn-lg w-100" type="submit">
                             Shorten
                         </button>
