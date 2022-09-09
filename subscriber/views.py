@@ -26,7 +26,8 @@ def customerSignup(request):
 	}
 	return render(request, 'customer/signup.html',context)
 
-# statistics 
+# statistics
+@user_passes_test(lambda u: u.is_authenticated, login_url='login') 
 def dashboard(request, pk):
 	template = 'customer/dashboard.html'
 	print('url=> ', request.get_host)
