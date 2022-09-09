@@ -24,13 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1h37pm@bk2h#$3guie)mffw^8ma613wp0-+jb9sdi$tc$ywp+p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # for development server 
-# ALLOWED_HOSTS = ['localhost:8000', '*']
+ALLOWED_HOSTS = ['localhost:8000', '*']
 
 # for production server 
-ALLOWED_HOSTS = ['shorturl00.herokuapp.com', '*']
+# ALLOWED_HOSTS = ['shorturl00.herokuapp.com', '*']
 
 DEFAULT_DOMAIN = 'http://{}'.format(ALLOWED_HOSTS[0])
 # DEFAULT_DOMAIN = ALLOWED_HOSTS[0]
