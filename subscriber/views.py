@@ -29,6 +29,7 @@ def customerSignup(request):
 # statistics 
 def dashboard(request, pk):
 	template = 'customer/dashboard.html'
+	print('url=> ', request.get_host)
 	context = {}
 	all_urls = ShortURLS.objects.filter(user_id=pk)
 	if request.user.is_superuser:

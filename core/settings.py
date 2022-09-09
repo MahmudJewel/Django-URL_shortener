@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-1h37pm@bk2h#$3guie)mffw^8ma613wp0-+jb9sdi$tc$ywp+p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# for development server 
+ALLOWED_HOSTS = ['localhost:8000', '*']
+DEFAULT_DOMAIN = 'http://{}'.format(ALLOWED_HOSTS[0])
+# DEFAULT_DOMAIN = ALLOWED_HOSTS[0]
 
 
 # Application definition
@@ -38,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # for current site 
+    # 'django.contrib.sites'
 
     # installed app 
     'urlShortener',
