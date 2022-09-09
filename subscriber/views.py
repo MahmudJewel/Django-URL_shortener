@@ -26,15 +26,24 @@ def customerSignup(request):
 	}
 	return render(request, 'customer/signup.html',context)
 
-# statistics
+# Only superuser can get all url list
+@user_passes_test(lambda u: u.is_superuser, login_url='login')
+def get_all_urls(request):
+	return ShortURLS.objects.all()
+
+# statistics for user & Superuser
 @user_passes_test(lambda u: u.is_authenticated, login_url='login') 
 def dashboard(request, pk):
 	template = 'customer/dashboard.html'
 	print('url=> ', request.get_host)
 	context = {}
-	all_urls = ShortURLS.objects.filter(user_id=pk)
+	all_urls = []
+	# Check if user get his own url or other. if others it cause error.
+	if pk==request.user.id:
+		all_urls = ShortURLS.objects.filter(user_id=pk)
 	if request.user.is_superuser:
-		all_urls = ShortURLS.objects.all()
+		all_urls = get_all_urls(request)
+		# all_urls = ShortURLS.objects.all()
 		
 	total_urls = all_urls.count()
 	active_urls = all_urls.filter(is_deleted=False)
