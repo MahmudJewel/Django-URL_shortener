@@ -105,18 +105,22 @@ Once `pip` has finished downloading the dependencies:
 ```
 
 # Screenshot
-### Home page
-![Category List](https://github.com/MahmudJewel/BlogWithLikeComment-DRF_Reactjs/blob/main/screenshot/blog-1%20home.jpg)
+### Home page for Guest User
+![Home page for Guest User](https://github.com/MahmudJewel/Django-URL_shortener/blob/dev/screenshot/shorturl-1.jpg)
 
-### Single Blog/like & comment mode
-![Category List](https://github.com/MahmudJewel/BlogWithLikeComment-DRF_Reactjs/blob/main/screenshot/blog-2%20details.jpg)
+### Home page for Authenticated User
+![Home page for Authenticated User](https://github.com/MahmudJewel/Django-URL_shortener/blob/dev/screenshot/shorturl-2.jpg)
 
-### Blog Creating Page
-![Category List](https://github.com/MahmudJewel/BlogWithLikeComment-DRF_Reactjs/blob/main/screenshot/blog-3%20post.jpg)
+### User Dashboard
+![User Dashboard](https://github.com/MahmudJewel/Django-URL_shortener/blob/dev/screenshot/shorturl-3.jpg)
 
 
-### Sign-up Page
-![Category List](https://github.com/MahmudJewel/BlogWithLikeComment-DRF_Reactjs/blob/main/screenshot/blog-4%20sign%20up.jpg)
+### Admin Dashborad
+![Admin Dashborad](https://github.com/MahmudJewel/Django-URL_shortener/blob/dev/screenshot/shorurl-4.jpg)
+
+### Sign-Up Page
+![Sign-Up Page](https://github.com/MahmudJewel/Django-URL_shortener/blob/dev/screenshot/shorturl-signup.jpg)
 
 ### Login Page
-![Category List](https://github.com/MahmudJewel/BlogWithLikeComment-DRF_Reactjs/blob/main/screenshot/blog-5%20login%20page.jpg)
+![Login Page](https://github.com/MahmudJewel/Django-URL_shortener/blob/dev/screenshot/shorturl-login.jpg)
+
