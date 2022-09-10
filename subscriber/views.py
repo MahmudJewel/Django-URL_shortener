@@ -52,6 +52,9 @@ def dashboard(request, pk):
 	total_active_urls = active_urls.count()
 	total_deactive_urls = deactive_urls.count()
 	# print(total_url)
+	main_url = request.build_absolute_uri('/')
+	# print('Main url => ', main_url)
+	context['main_url'] = main_url
 	context['total_urls'] = total_urls
 	context['active_urls'] = active_urls
 	context['deactive_urls'] = deactive_urls

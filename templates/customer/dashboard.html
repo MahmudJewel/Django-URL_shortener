@@ -114,7 +114,7 @@
                     {% for url in active_urls %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td>{{ url.get_short_absolute_url }}</td>
+                        <td>{{ main_url }}{{ url.short_url }}</td>
                         <td>{{ url.long_url }}</td>
                     </tr>
                     {% endfor %}
@@ -136,7 +136,7 @@
                     {% for url in deactive_urls %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td>{{ url.get_short_absolute_url }}</td>
+                        <td>{{ main_url }}{{ url.short_url }}</td>
                         <td>{{ url.long_url }}</td>
                     </tr>
                     {% endfor %}
