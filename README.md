@@ -1,28 +1,38 @@
 ﻿This is a URL-Shortener App where user/anonymous user can convert long url to short url.
 # Requirements ==> 
 The project will have following features-
-● Given a URL, your service should generate a shorter and unique alias
+* Given a URL, your service should generate a shorter and unique alias
 of it.
-● This link should be short enough to be easily copied and pasted into
+* This link should be short enough to be easily copied and pasted into
 applications.
-● When users access a short link, our service should
+* When users access a short link, our service should
 redirect them to the original link.
-● Users should optionally be able to pick a custom short link for their
+* Users should optionally be able to pick a custom short link for their
 URL.
-● Links will expire after a standard default timespan. Users should
+* Links will expire after a standard default timespan. Users should
 be able to specify the expiration time.
-● Shortened links should not be predictable.
-● Full-fledged registration and login system
-● Proper validation for each form
-● Option for private URL
-● Basic statistics
-● Basic Admin Panel
-Application can be used both in logged in or guest users. But for using the full
+* Shortened links should not be predictable.
+* Full-fledged registration and login system
+* Proper validation for each form
+* Option for private URL
+* Basic statistics
+* Basic Admin Panel
+
+N.B: Application can be used both in logged in or guest users. But for using the full
 potential features, you should be logged in.
 ## API
 This project will have two basic API endpoints to create and retrieve shortened
 links. Standard token-based authentication system needs to be implemented
 here.
+
+# Developed API
+| METHOD | ROUTE | FUNCTIONALITY |ACCESS|
+| ------- | ----- | ------------- | ------------- |
+| *POST* | ```/jwt/create/``` | _Login user_| _All users_|
+| *POST* | ```/jwt/refresh/``` | _Refresh the access token_|_All users_|
+| *POST* | ```/jwt/verify/``` | _Verify the validity of a token_|_All users_|
+| *POST* | ```/api/create/``` | _Create new short urls_|_Allow any_|
+| *GET* | ```/api/list/``` | _List all urls_|_Adminuser_|
 
 # Tools
 ### Back-end
