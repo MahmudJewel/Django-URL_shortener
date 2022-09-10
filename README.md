@@ -105,6 +105,9 @@ Once `pip` has finished downloading the dependencies:
 ```
 
 # Screenshot
+### Custom Short URL Genaration:
+![Custom Short URL Genaration](https://github.com/MahmudJewel/Django-URL_shortener/blob/dev/screenshot/shorturl-custom%20url.jpg)
+
 ### Home page for Guest User
 ![Home page for Guest User](https://github.com/MahmudJewel/Django-URL_shortener/blob/dev/screenshot/shorturl-1.jpg)
 
